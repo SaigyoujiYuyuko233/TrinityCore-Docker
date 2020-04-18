@@ -22,11 +22,12 @@ RUN git clone -b 3.3.5 https://github.com/TrinityCore/TrinityCore.git \
 RUN chmod +x /opt/trinity/bin/authserver \
   && chmod +x /opt/trinity/bin/worldserver
   
-RUN yum install mysql-devel bzip2-devel readline-devel ncurses-devel boost-devel p7zip openssl openssl-devel -y \
-  && yum clean all
-  
 FROM fedora:31
 
 WORKDIR /opt/trinity
+
+RUN yum install mysql-devel bzip2-devel readline-devel ncurses-devel boost-devel p7zip openssl openssl-devel -y \
+  && yum clean all
+  
 COPY --from=0 /opt/trinity .
 
