@@ -18,7 +18,8 @@ RUN cd TrinityCore \
   && make install \
   && cd /root && rm -rf TrinityCore
 
-RUN chmod +x /opt/trinity/bin/authserver
+RUN chmod +x /opt/trinity/bin/authserver \
+  && chmod +x /opt/trinity/bin/worldserver
   
-ENTRYPOINT ["./opt/trinity/bin/authserver"]
+ENTRYPOINT ["cd /opt/trinity/bin/;"]
 
