@@ -28,5 +28,3 @@ FROM fedora:31
 WORKDIR /opt/trinity
 COPY --from=0 /opt/trinity .
 
-ENTRYPOINT ["cd /opt/trinity/bin/;"]
-
